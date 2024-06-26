@@ -32,12 +32,16 @@ public class MovieInsertController {
 	public ModelAndView doAction(@ModelAttribute("movie") @Valid MovieBean movie, BindingResult result) {
 		ModelAndView mav = new ModelAndView();
 
+		/*
+		삭제
 		if(result.hasErrors()) {
 			mav.setViewName(getPage); // movieInsertForm
 			return mav;
 		}
+		*/
 		
 		int cnt = -1;
+		/* 추가 int cnt = -1; */
 		cnt = movieDao.insertMovie(movie);
 		
 		if(cnt != -1) {	
